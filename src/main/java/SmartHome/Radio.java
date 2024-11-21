@@ -17,20 +17,20 @@ public class Radio {
 
     public void setCurrentRadioStation(int newCurrentRadioStation) {
         if (newCurrentRadioStation > 9) {
-            return;
+            newCurrentRadioStation = 0 ;
         }
         if (newCurrentRadioStation < 0) {
-            return;
+            newCurrentRadioStation = 9;
         }
         currentRadioStation = newCurrentRadioStation;
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 10) {
-            return;
+        if (newCurrentVolume > 100) {
+            newCurrentVolume = 100;
         }
         if (newCurrentVolume < 0) {
-           return;
+            newCurrentVolume = 0;
         }
         currentVolume = newCurrentVolume;
     }
@@ -38,7 +38,7 @@ public class Radio {
     // увеличение громкости на 1;
 
     public void volumeUp() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
     }

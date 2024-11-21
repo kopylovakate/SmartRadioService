@@ -11,10 +11,10 @@ public class RadioTest {
     // увеличить громкость;
 
     public void increaseVolume() {
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(4);
         radio.volumeUp();
 
-        int expected = 6;
+        int expected = 5;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -25,10 +25,10 @@ public class RadioTest {
     // увеличить громкость больше Max;
 
     public void increaseVolumeMoreMax() {
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.volumeUp();
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -39,10 +39,10 @@ public class RadioTest {
     //убавить громкость;
 
     public void decreaseVolume() {
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(8);
         radio.volumeDown();
 
-        int expected = 4;
+        int expected = 7;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -93,7 +93,7 @@ public class RadioTest {
     public void setStationLessMin() {
         radio.setCurrentRadioStation(-1);
 
-        int expected = 0;
+        int expected = 9;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -103,10 +103,10 @@ public class RadioTest {
     //следующая станция;
 
     public void nextStation() {
-        radio.setCurrentRadioStation(5);
+        radio.setCurrentRadioStation(3);
         radio.next();
 
-        int expected = 6;
+        int expected = 4;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
